@@ -1,0 +1,40 @@
+@import './Confiq.scss';
+
+.tag {
+    position: relative;
+    display: inline-block;
+    background-color: $color-05-A30;
+    padding: $tag-padding-up-down $tag-padding-left-right;
+    border-radius: $border-radius-01;
+
+    margin-bottom: $bottom-margin-S;
+    margin-right: $right-margin-XS;
+    .tag__close-btn {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        top: 0;
+        transform: translate(50%, -50%);
+        background-color: $color-05-A30;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 80%
+    }
+
+    .tag__txt {
+        text-align: center;
+        margin: auto;
+        color: $color-05;
+    }
+}
+.tag--dark {
+    background-color: $color-01-A70;
+    .tag__close-btn {
+        background-color: $color-01-A70;
+        color: $color-05;
+    }
+}

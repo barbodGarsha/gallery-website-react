@@ -1,0 +1,78 @@
+@import './Confiq.scss';
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+   .search-bar__input {
+       
+        border-radius: $border-radius-01;
+        width: 100%;
+        border: none;
+        outline: none;
+        font-size: $font-size-L;
+        padding: $container-padding-up-down $container-padding-left-right;
+        color: $color-01;
+        z-index: 99;
+   }
+
+   //NOTE: I won't use the SCSS vars for the margins and max-height in this section for now
+   .search-bar__recommendations {
+        position: absolute;   
+        top: 1rem;
+        left: 0;
+        width: 100%;
+        border-radius: $border-radius-01;
+        background-color: $color-04;
+        overflow: hidden;
+        overflow-y: scroll;
+        
+        //NOTE to hide scroll bar
+        /*
+        -ms-overflow-style: none;  // IE and Edge 
+        scrollbar-width: none;  // Firefox 
+        */
+        max-height: 15rem;
+        z-index: 9;
+        .search-bar__recommendations__container {
+            font-size: $font-size-L;
+            color: $color-01;
+            margin-top: 1rem;
+            .search-bar__recommendations__item {
+                cursor: pointer;
+                padding: $container-padding-up-down $container-padding-left-right;
+            }
+
+            
+            .search-bar__recommendations__item:hover {
+                background-color: #C37956;
+            }
+        }
+
+        display: none;
+   }
+   //NOTE to hide scroll bar 
+   .search-bar__recommendations::-webkit-scrollbar {
+    display: none;
+    }
+   
+}
+.search-bar--dark {
+    .search-bar__input {
+        background-color: $color-04;
+    }
+
+    .search-bar__input::placeholder {
+        color: $color-05;
+    }
+    .search-bar__recommendations {
+        background-color: $color-01;
+        .search-bar__recommendations__item {
+            color: $color-05;
+        }
+    }
+}
+

@@ -1,9 +1,10 @@
-import React, { useRef } from "react";
+import React, { useState, useRef } from "react";
 import './Styles/Search-Bar.scss'
 
 import Search_Bar__results from "./Search-Bar__Results"
 
-export default function Search_Bar() {
+export default function Search_Bar({ tags }) {
+
     const search_bar__recs = useRef()
     const search_bar__recs__conatiner = useRef()
 
@@ -28,7 +29,6 @@ export default function Search_Bar() {
     function handle_focus(e) {
         
         search_bar__recs.current.style.display = 'block'
-        console.log("WORKING")
         //render_search_results('', search_bar__recs__conatiner, search_bar__recs.current)
         
     }
@@ -52,7 +52,11 @@ export default function Search_Bar() {
             <input type="text" className="search-bar__input" placeholder="Search for tags" data-search-bar__input onFocus={handle_focus} onMouseDown={handle_mouse_down} onBlur={handle_blur} onInput={handle_input}/>
             <div className="search-bar__recommendations" ref={search_bar__recs}>
                 <div className="search-bar__recommendations__container" data-search-bar__recommendations__container ref={search_bar__recs__conatiner}>
-                    <Search_Bar__results name={"Barbod"}/>
+                    {
+                        tags.map(tag => {
+                            return <Search_Bar__results key={tag.id} name={tag.name}/>
+                        })    
+                    }
                 </div>
             </div>        
         </div>

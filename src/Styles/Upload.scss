@@ -1,0 +1,100 @@
+
+@import './Confiq.scss';
+
+.upload {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-01-A70;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .upload__inputs {
+        margin-bottom: $bottom-margin-S;
+    }
+
+    .upload__btn {
+        cursor: pointer;
+        position: relative;
+        background-color: $color-04;
+        color: $color-05;
+        border-radius: $border-radius-01;
+        padding: $container-padding-up-down $container-padding-left-right;
+        overflow: hidden;
+        .upload__btn__file-input {    
+            cursor: pointer;
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -100%;
+            left: -100%;
+            opacity: 0;  
+        }
+    }
+    .upload__btn--has-bottom-margin {
+        margin-bottom: $bottom-margin-XS;
+    }
+    .upload__btn:hover {
+        background-color: $color-01;
+    }
+
+    .upload__name {
+        display: flex;
+        background-color: $color-04;
+        border-radius: $border-radius-01;
+        margin-bottom: $bottom-margin-XS;
+
+        .upload__name-input {
+            background-color: $color-04;
+            width: 100%;
+            border: none;
+            outline: none;
+            border-radius: $border-radius-01;
+            font-size: $font-size-L;
+            padding: $container-padding-up-down $container-padding-left-right;
+            color: $color-01;
+            z-index: 99;
+        }
+
+        .upload__name-input::placeholder {
+            color: $color-05;
+        }
+    }
+
+    .upload__container {
+        background-color: $color-05;
+        width: 25%;
+        height: 50%;
+        border-radius: $border-radius-01;
+        padding: $white-space-02 $white-space-02;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+
+        
+        .upload__close-btn {
+            cursor: pointer;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transform: translate(50%, -50%);
+            background-color: $color-01-A70;
+            color: $color-05;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem
+        }
+    }
+
+}

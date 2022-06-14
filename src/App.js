@@ -11,7 +11,7 @@ function App() {
 
   let [tags, set_tags] = useState([{id: 'ABSTRACT', name: 'Abstract'}, {id: 'ART', name: 'Art'}, {id: 'TEST', name: 'Test'}])
   let [chosen_tags, set_chosen_tags] = useState([])
-  let [photos, set_photos] = useState([{id: '1', tags: ['ART', 'ABSTRACT'], name: 'Test', src: 'http://127.0.0.1:8887/Test.jpeg'}, {id: '2', tags: ['ART'], name: 'Test2', src: 'http://127.0.0.1:8887/Test02.jpg'}])
+  let [photos, set_photos] = useState([{id: '1', tags: ['ART', 'ABSTRACT'], name: 'Test', src: require('./images/Test.jpeg')}, {id: '2', tags: ['ART'], name: 'Test2', src: require('./images/test02.jpg') }])
   let [photo_viewer, set_photo_viewer] = useState({src: '', is_vertical: false, is_hidden: true})
   let [upload, set_upload] = useState({is_hidden: true})
 
